@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://4olpbigmkc7s"]
+
+[ext_resource type="Texture2D" uid="uid://nv6lg14yfbrj" path="res://Animated Coins.png" id="1_wltir"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lslib"]
+radius = 32.01562
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiowd"]
+atlas = ExtResource("1_wltir")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x7xp"]
+atlas = ExtResource("1_wltir")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80516"]
+atlas = ExtResource("1_wltir")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqaj3"]
+atlas = ExtResource("1_wltir")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y03ms"]
+atlas = ExtResource("1_wltir")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkoub"]
+atlas = ExtResource("1_wltir")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uugg"]
+atlas = ExtResource("1_wltir")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lslib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiowd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x7xp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80516")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqaj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y03ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkoub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uugg")
+}],
+"loop": 1,
+"name": &"coin",
+"speed": 7.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=354968972]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71496368]
+position = Vector2(189, 157)
+shape = SubResource("CircleShape2D_lslib")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419943694]
+position = Vector2(329, 271)
+scale = Vector2(2.2539353, 3.1875)
+sprite_frames = SubResource("SpriteFrames_lslib")
+animation = &"coin"
+frame_progress = 0.092171066
