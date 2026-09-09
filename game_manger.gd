@@ -1,15 +1,8 @@
 extends Control
+
 var coin: int = 0
 @onready var coin_label: Label = $coinLabel
-@export var clicker_power: int = 10
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+#@export var clicker_power: int = 10
 
 func _on_button_down() -> void:
 	#print("hi")
@@ -18,6 +11,5 @@ func _on_button_down() -> void:
 	print(coin)
 
 
-func _on_upgrade_button_pressed() -> void:
-	print("upgrade pressed")
-	clicker_power = clicker_power * 2
+#func _on_upgrade_button_pressed() -> void:
+	#clicker_power = clicker_power * 2
