@@ -9,8 +9,8 @@ func _ready() -> void:
 	clicker_button_path.clicked.connect(_on_button_down)
 func _on_button_down(clicker_power) -> void:
 	
-	#print("hi")
-	coin += clicker_power
+	#print(clicker_power)
+	coin = coin + clicker_power
 	coin_label.text = "coin: " + str(coin)
 	print(coin)
 

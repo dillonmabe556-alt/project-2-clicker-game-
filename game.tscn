@@ -23,6 +23,10 @@ text = "coin: "
 
 [node name="clickerButton" parent="." unique_id=901446087 instance=ExtResource("2_feb5d")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 136.0
+offset_bottom = 136.0
 script = ExtResource("3_fc0e3")
 
 [connection signal="pressed" from="clickerButton" to="." method="_on_button_down"]
