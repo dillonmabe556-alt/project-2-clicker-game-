@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://4olpbigmkc7s"]
 
+[ext_resource type="Script" uid="uid://624nr25ncf4r" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://nv6lg14yfbrj" path="res://Animated Coins.png" id="1_wltir"]
+[ext_resource type="AudioStream" uid="uid://8266m23jll25" path="res://CoinSFX.mp3" id="3_v7riw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lslib"]
 radius = 32.01562
@@ -63,16 +65,24 @@ animations = [{
 }]
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=354968972]
+script = ExtResource("1_0t63x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71496368]
-position = Vector2(189, 157)
+position = Vector2(-0.9685211, 0.5)
 shape = SubResource("CircleShape2D_lslib")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419943694]
-position = Vector2(329, 271)
+position = Vector2(0.03147888, 0.5)
 scale = Vector2(2.2539353, 3.1875)
 sprite_frames = SubResource("SpriteFrames_lslib")
 animation = &"coin"
 autoplay = "coin"
 frame = 2
 frame_progress = 0.4619006
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1499189362]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=140336798]
+stream = ExtResource("3_v7riw")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

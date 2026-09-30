@@ -2,6 +2,9 @@ extends Button
 
 @export var clicker_power: int = 10
 @onready var coin_scene: PackedScene = load("res://coin.tscn")
+
+@export var game_manager: Node
+
 signal clicked(clicker_power :int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,9 +18,13 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 		var c = coin_scene.instantiate()
-		add_child(c)
 		c.global_position = get_global_mouse_position()
+		get_tree().current_scene.add_child(c)
+		print(get_global_mouse_position(),c.global_position)
 		clicked.emit(clicker_power)
 func _on_upgrade_button_pressed() -> void:
+	var cost: int = clicker_power*3
+	if game_manager.coin >= cost:
 		clicker_power *= 2
 		print("upgraded",clicker_power)	
+		clicked.emit(-cost)

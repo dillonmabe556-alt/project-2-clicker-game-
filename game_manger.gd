@@ -7,10 +7,11 @@ var coin: int = 0
 #@export var clicker_power: int = 10
 func _ready() -> void:
 	clicker_button_path.clicked.connect(_on_button_down)
-func _on_button_down(clicker_power) -> void:
+	$generator.coin_generated.connect(_on_button_down)
+func _on_button_down(value) -> void:
 	
 	#print(clicker_power)
-	coin = coin + clicker_power
+	coin = coin + value
 	coin_label.text = "coin: " + str(coin)
 	print(coin)
 

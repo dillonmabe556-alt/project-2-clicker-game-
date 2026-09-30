@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cfgailnowld1r"]
+
+[ext_resource type="Script" uid="uid://d2g8ttpfh3lxk" path="res://generator.gd" id="1_r36sx"]
+[ext_resource type="Texture2D" uid="uid://bimk5lpbp2bod" path="res://icon.svg" id="2_k6sox"]
+
+[node name="generator" type="Control" unique_id=6490698]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r36sx")
+
+[node name="upgradebutton" type="Button" parent="." unique_id=71122309]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 196.0
+offset_right = 593.0
+offset_bottom = 232.0
+text = "upgrade generator"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=748646391]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 464.0
+offset_top = 60.0
+offset_right = 592.0
+offset_bottom = 188.0
+texture = ExtResource("2_k6sox")
+
+[node name="Timer" type="Timer" parent="." unique_id=1651027569]
+autostart = true
+
+[connection signal="pressed" from="upgradebutton" to="." method="_on_upgradebutton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

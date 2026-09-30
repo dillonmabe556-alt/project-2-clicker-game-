@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0sogesg80xl3" path="res://game_manger.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://csvlytc8dnh4a" path="res://clicker_button.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://clpx1ys5w3wvu" path="res://clicker_button.gd" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://cfgailnowld1r" path="res://generator.tscn" id="4_fc0e3"]
 
 [node name="game" type="Control" unique_id=823367481]
 layout_mode = 3
@@ -15,19 +16,25 @@ script = ExtResource("1_feb5d")
 
 [node name="coinLabel" type="Label" parent="." unique_id=624421456]
 layout_mode = 0
-offset_left = 292.0
-offset_top = 151.0
-offset_right = 409.0
-offset_bottom = 211.0
+offset_left = 974.0
+offset_top = 36.0
+offset_right = 1091.0
+offset_bottom = 96.0
 text = "coin: "
 
-[node name="clickerButton" parent="." unique_id=901446087 instance=ExtResource("2_feb5d")]
+[node name="clickerButton" parent="." unique_id=901446087 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_feb5d")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 136.0
-offset_bottom = 136.0
+offset_left = 416.0
+offset_top = 276.0
+offset_right = 552.0
+offset_bottom = 412.0
 script = ExtResource("3_fc0e3")
+game_manager = NodePath("..")
+
+[node name="generator" parent="." unique_id=6490698 node_paths=PackedStringArray("game_manager") instance=ExtResource("4_fc0e3")]
+layout_mode = 1
+mouse_filter = 2
+game_manager = NodePath("..")
 
 [connection signal="pressed" from="clickerButton" to="." method="_on_button_down"]
 [connection signal="pressed" from="clickerButton" to="clickerButton" method="_on_pressed"]
