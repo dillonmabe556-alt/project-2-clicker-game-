@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfgailnowld1r"]
 
 [ext_resource type="Script" uid="uid://d2g8ttpfh3lxk" path="res://generator.gd" id="1_r36sx"]
-[ext_resource type="Texture2D" uid="uid://bimk5lpbp2bod" path="res://icon.svg" id="2_k6sox"]
+[ext_resource type="Texture2D" uid="uid://dgbhgwabad0pm" path="res://WoodChest.png" id="2_r36sx"]
 
 [node name="generator" type="Control" unique_id=6490698]
 layout_mode = 3
@@ -14,20 +14,20 @@ script = ExtResource("1_r36sx")
 
 [node name="upgradebutton" type="Button" parent="." unique_id=71122309]
 layout_mode = 0
-offset_left = 461.0
-offset_top = 196.0
-offset_right = 593.0
-offset_bottom = 232.0
-text = "upgrade generator"
+offset_left = -23.0
+offset_top = 94.0
+offset_right = 131.0
+offset_bottom = 130.0
+text = "upgrade chest"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=748646391]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 464.0
-offset_top = 60.0
-offset_right = 592.0
-offset_bottom = 188.0
-texture = ExtResource("2_k6sox")
+offset_left = -13.0
+offset_top = -25.0
+offset_right = 115.0
+offset_bottom = 103.0
+texture = ExtResource("2_r36sx")
 
 [node name="Timer" type="Timer" parent="." unique_id=1651027569]
 autostart = true

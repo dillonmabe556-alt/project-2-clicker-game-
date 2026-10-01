@@ -22,6 +22,7 @@ func _on_pressed() -> void:
 		get_tree().current_scene.add_child(c)
 		print(get_global_mouse_position(),c.global_position)
 		clicked.emit(clicker_power)
+		$AnimatedSprite2D.play("default")
 func _on_upgrade_button_pressed() -> void:
 	var cost: int = clicker_power*3
 	if game_manager.coin >= cost:

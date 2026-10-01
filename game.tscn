@@ -1,9 +1,112 @@
 [gd_scene format=3 uid="uid://bu8010686ih4o"]
 
 [ext_resource type="Script" uid="uid://0sogesg80xl3" path="res://game_manger.gd" id="1_feb5d"]
+[ext_resource type="Texture2D" uid="uid://pkjrkeekmor7" path="res://01_the_door.png" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://csvlytc8dnh4a" path="res://clicker_button.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://clpx1ys5w3wvu" path="res://clicker_button.gd" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cfgailnowld1r" path="res://generator.tscn" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dofc3xrcqpuo1" path="res://Shield-like Padlock - BLACK - Spritesheet.png" id="5_ryrav"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ryrav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eow3j"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(0, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5wjh"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(14, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef74"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(42, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(28, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(56, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iotsf"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(70, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(84, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215e1"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(98, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sc4i"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(112, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cx4"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(126, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8heu"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(140, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(154, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
+atlas = ExtResource("5_ryrav")
+region = Rect2(168, 0, 14, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lslib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eow3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5wjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hve3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iotsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sc4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8heu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvswv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyg6")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="game" type="Control" unique_id=823367481]
 layout_mode = 3
@@ -13,6 +116,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_feb5d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1428425747]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = ExtResource("2_7jktm")
 
 [node name="coinLabel" type="Label" parent="." unique_id=624421456]
 layout_mode = 0
@@ -24,15 +133,47 @@ text = "coin: "
 
 [node name="clickerButton" parent="." unique_id=901446087 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_feb5d")]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 276.0
-offset_right = 552.0
-offset_bottom = 412.0
+offset_left = 507.0
+offset_top = 295.0
+offset_right = 643.0
+offset_bottom = 431.0
+icon = SubResource("ViewportTexture_ryrav")
 script = ExtResource("3_fc0e3")
 game_manager = NodePath("..")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="clickerButton" unique_id=2014652495]
+position = Vector2(81, 64)
+scale = Vector2(9.285714, 5.240741)
+sprite_frames = SubResource("SpriteFrames_lslib")
+frame = 9
+frame_progress = 0.77195185
+
 [node name="generator" parent="." unique_id=6490698 node_paths=PackedStringArray("game_manager") instance=ExtResource("4_fc0e3")]
 layout_mode = 1
+offset_left = 534.0
+offset_top = 503.0
+offset_right = -517.0
+offset_bottom = -22.0
+mouse_filter = 2
+game_manager = NodePath("..")
+wait_time = 2.0
+
+[node name="generator2" parent="." unique_id=226093656 node_paths=PackedStringArray("game_manager") instance=ExtResource("4_fc0e3")]
+layout_mode = 1
+offset_left = 693.0
+offset_top = 506.0
+offset_right = -288.0
+offset_bottom = -49.0
+mouse_filter = 2
+game_manager = NodePath("..")
+wait_time = 3.0
+
+[node name="generator3" parent="." unique_id=2000610960 node_paths=PackedStringArray("game_manager") instance=ExtResource("4_fc0e3")]
+layout_mode = 1
+offset_left = 387.0
+offset_top = 497.0
+offset_right = -647.0
+offset_bottom = -26.0
 mouse_filter = 2
 game_manager = NodePath("..")
 

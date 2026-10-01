@@ -7,7 +7,8 @@ var coin: int = 0
 #@export var clicker_power: int = 10
 func _ready() -> void:
 	clicker_button_path.clicked.connect(_on_button_down)
-	$generator.coin_generated.connect(_on_button_down)
+	for g in [$generator, $generator2, $generator3]:
+		g.coin_generated.connect(_on_button_down)
 func _on_button_down(value) -> void:
 	
 	#print(clicker_power)
